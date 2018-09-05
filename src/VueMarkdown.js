@@ -208,7 +208,6 @@ export default {
       ) : ''
     outHtml = this.postrender(outHtml);
 
-    this.$emit('rendered', outHtml)
     return createElement(
       'div', {
         domProps: {
@@ -236,5 +235,8 @@ export default {
         this.$forceUpdate()
       })
     })
+  },
+  mounted() {
+    this.$emit('rendered', this.$el);
   },
 }
