@@ -321,7 +321,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var outHtml = this.show ? this.md.render(this.prerender(this.sourceData)) : '';
 	    outHtml = this.postrender(outHtml);
 
-	    this.$emit('rendered', outHtml);
 	    return createElement('div', {
 	      domProps: {
 	        innerHTML: outHtml
@@ -369,6 +368,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this2.$forceUpdate();
 	      });
 	    });
+	  },
+	  mounted: function mounted() {
+	    this.$emit('rendered', this.$el);
 	  }
 	};
 
